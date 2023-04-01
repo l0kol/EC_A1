@@ -5,6 +5,10 @@ import PanelMain from './components/PanelMain';
 import PanelStore from './components/PanelStore';
 import PanelProfile from './components/PanelProfile';
 import PanelForum from './components/PanelForum';
+import PanelUgodnosti from './components/PanelUgodnosti';
+import PanelRoom from './components/PanelRoom';
+import PanelDevices from './components/PanelDevices';
+import PanelZrna from './components/PanelZrna';
 import Error from './components/Error';
 import {AppContext} from "./Context/context";
 
@@ -71,6 +75,10 @@ function App() {
             <Route exact path={"/store"} element={<PanelStore/>}/>
             <Route exact path={"/profile"} element={<PanelProfile/>}/>
             <Route exact path={"/forum"} element={<PanelForum/>}/>
+            <Route exact path={"/devices"} element={<PanelDevices/>}/>
+            <Route exact path={"/room"} element={<PanelRoom/>}/>
+            <Route exact path={"/ugodnosti"} element={<PanelUgodnosti/>}/>
+            <Route exact path={"/ugodnosti/zrna"} element={<PanelZrna/>}/>
             <Route path='*' element={<Error />} />
         </Routes>
     </div>

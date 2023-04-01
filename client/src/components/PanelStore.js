@@ -40,7 +40,7 @@ const PanelStore = () => {
 
             <Row style={{marginTop:"40px", marginBottom:"5px"}}>
                 <div style={{width:"45%"}}>
-                    <Button variant="warning" style={{fontSize:"30px"}}>>Ugodnosti!</Button>
+                    <Button variant="warning" href="/ugodnosti" style={{fontSize:"30px"}}>>Ugodnosti!</Button>
                     <p style={{fontSize:"18px"}}>Stanje: 1000 <img src="zrnocoin.png" alt="zrno" style={{width: "20px"}}/></p>
                 </div>
 
