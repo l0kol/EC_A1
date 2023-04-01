@@ -27,7 +27,7 @@ const PanelProfile = () => {
                 </Col>
                 <Col  style={{marginTop:"20px"}}>
                 <img src="zrno_framed.png" alt="slika uporabnika" style={{width: "130px", height: "130px"}} />
-                <h3><Badge bg="dark" style={{fontWeight:"400"}}><figcaption>Jure Zrno</figcaption></Badge></h3>
+                <h3><Badge bg="dark" style={{fontWeight:"400"}}><figcaption>{context.user.name}</figcaption></Badge></h3>
                 </Col>
                 <Col style={{marginTop:"20px"}}>
                     <Button variant="danger" href="/store" style={{fontSize:"30px"}}><TiShoppingCart /></Button>
