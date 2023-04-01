@@ -4,6 +4,8 @@ import { AppContext } from "../Context/context";
 
 import {useContext} from "react";
 
+import imageBg from "../images/front-bg.gif";
+
 
 
 
@@ -14,7 +16,7 @@ const PanelHome = () => {
 
 
     return (
-        <Container className="d-flex flex-column" style={{backgroundColor: "#F2E0C2", height: "800px"}}>
+        <Container className="d-flex flex-column" style={{height: "800px", backgroundImage: `url(${imageBg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", imageRendering: "pixelated"}}>
             <Row>
                  <div >
                     <img src="A1_logo.png" alt="A1 logo" className="logo" style={{width: "120px", height: "120px", alignSelf: "center"}} />
@@ -37,21 +39,21 @@ const PanelHome = () => {
             <Row>
                 <Col>             
                     <div style={{float: 'left'}}>
-                        <Button variant="outline-dark"  href="/profile" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Profil</Button>
+                        <Button variant="dark"  href="/profile" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Profil</Button>
                     </div>
                 </Col>
             </Row>
             <Row>
                 <Col>
                 <div style={{float: 'right'}}>
-                    <Button variant="outline-dark" href="/store" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Trgovina</Button>
+                    <Button variant="dark" href="/store" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Trgovina</Button>
                 </div>
                 </Col>
             </Row>
             <Row>
                 <Col>
                 <div style={{float: 'left'}}>
-                    <Button variant="outline-dark" href="/forum" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Forum</Button>
+                    <Button variant="dark" href="/forum" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Forum</Button>
                 </div>
                 </Col>
             </Row>

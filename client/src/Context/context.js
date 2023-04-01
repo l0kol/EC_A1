@@ -26,7 +26,7 @@ export const ContextWrapper = (props) => {
         {
             //State of user ["NONE","LOGGED-IN","LOGGED-OUT"]
             state: "NONE",
-            id: "NULL",
+            id: undefined,
             //Type ADMIN, USER
             role: "",
             balance: "NULL",
@@ -55,8 +55,68 @@ export const ContextWrapper = (props) => {
         heading: "👺 Attack detected 👺"
     })
 
+
+        /**
+     * Login user function
+     * @param {string} registerCode - User's register number
+     * @param {string} password - User's password
+     */
+        const apiUserLogin = ((email, password) => {
+
+            return new Promise(async (resolve, reject) => {
+                try {
+                    let out = await axios.get(`user/login`, {
+                        params: {
+                            email: email,
+                            password: password }
+                        })
+                    resolve(out.data)
+                } catch (e) {
+                    reject(e);
+                }
+            })
+        });
+
+
+    /**
+     * Fetches user's data
+     * @returns {Object} user - User's object
+     * @example {id: '63a576228ac157377b59bcec', ....}
+     */
+    const apiUserFetch = useCallback(() => {
+        // console.log("Chain id " + chainId)
+        return new Promise(async (resolve, reject) => {
+            try {
+
+                let out = await axios.get(`user`,
+                 {
+                    headers: {
+                        authorization: cookies.authToken
+                      }
+                })
+                // console.log(out.data.user)
+                resolve(out.data.user)
+            } catch (e) {
+                reject(e);
+            }
+        })
+    }, [cookies.authToken])
+
     return (
         <AppContext.Provider value={{
+            user, setUser,
+            usersBalances, setUsersBalances,
+            usersPendingBalances, setUsersPendingBalances,
+            active, setActive,
+            authToken, setAuthToken,
+            userId, setUserId,
+            cookies, setCookie, removeCookie,
+            note, setNote,
+            notifCard, setNotifCard,
+            loadingMain, setLoadingMain,
+            apiUserLogin,
+            apiUserFetch
+
 
         }}>
             {props.children}

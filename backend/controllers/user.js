@@ -1,4 +1,5 @@
-
+const jwt = require('jsonwebtoken');
+const secret = require('../config.js').jwt.secret
 const serviceUser = require('../services/User');
 
 exports.getUser = async (req, res) => {
@@ -57,6 +58,37 @@ exports.create = async (req, res) => {
     } catch (e) {
         res.status(401).json({
             message: 'Auth failed'
+        });
+    }
+};
+
+exports.login = async (req, res) => {
+    try {
+        let user = await serviceUser.getUserByEmail(req.query.email);
+        await serviceUser.authenticate(user.id, req.query.password);
+        const token = jwt.sign({
+                userId: user._id
+            },
+            secret,
+            {
+                expiresIn: "30 days"
+            },
+        );
+        user.state = "LOGGED-IN";
+        await user.save();
+        return res.status(200).json({
+            message: 'Auth successful',
+            token: token,
+            user: {
+                id: user._id,
+                name: user.name,
+                type: user.type,
+                state: user.state,
+            }
+        });
+    } catch (e) {
+        res.status(401).json({
+            message: e
         });
     }
 };

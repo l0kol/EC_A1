@@ -10,7 +10,7 @@ module.exports = {
         secret: "CTEyU6vTpLEQWYHMhAMqn2sRw8jHV8ssWFvSf2AUte5qAw"
     },
 
-    serverReactUrl: "http://localhost:3000",
+    serverReactUrl: "http://localhost:3000/",
 
     //Production mode
     // mode: "production"

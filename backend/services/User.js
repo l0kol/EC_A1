@@ -42,3 +42,57 @@ module.exports.createUser = (name, email, password) => {
         }
     })
 }
+
+/**
+ *
+ * @param userId mongodb id of user object
+ * @param pass current password, sent to email of not changed
+ * @returns {Promise<true>}
+ */
+module.exports.authenticate = (userId, pass) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            //Fetch user
+            let user = await User.findById(userId);
+            //Verify pass
+            if (pass.localeCompare(user.password) !== 0) return reject("Wrong password")
+            resolve(true);
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+
+/**
+ *
+ * @param registerCode for student contest this is their university id
+ * @returns {Promise<User>}
+ */
+module.exports.getUserByEmail = (email) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let user = await User.findOne({email: email});
+            if (user) return resolve(user);
+            reject("User not found");
+        } catch (e) {
+            reject(e);
+        }
+    })
+}
+
+/**
+ *
+ * @param userId
+ * @returns {Promise<User>}
+ */
+module.exports.getUser = (userId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let user = await User.findById(userId);
+            if (user) return resolve(user);
+            reject("User not found");
+        } catch (e) {
+            reject(e);
+        }
+    })
+}
