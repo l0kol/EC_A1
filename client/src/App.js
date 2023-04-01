@@ -1,9 +1,10 @@
-import logo from './logo.svg';
+import logo from './A1_logo.png';
 import './App.css';
 import {Container, Spinner, Navbar, Button} from "react-bootstrap";
 import PanelMain from './components/PanelMain';
 import PanelStore from './components/PanelStore';
 import PanelProfile from './components/PanelProfile';
+import PanelForum from './components/PanelForum';
 import Error from './components/Error';
 import {AppContext} from "./Context/context";
 
@@ -51,6 +52,7 @@ function App() {
             <Route exact path={"/"} element={<PanelMain/>}/>
             <Route exact path={"/store"} element={<PanelStore/>}/>
             <Route exact path={"/profile"} element={<PanelProfile/>}/>
+            <Route exact path={"/forum"} element={<PanelForum/>}/>
             <Route path='*' element={<Error />} />
         </Routes>
     </div>
