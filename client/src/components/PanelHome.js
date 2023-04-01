@@ -14,7 +14,7 @@ const PanelHome = () => {
 
 
     return (
-        <Container>
+        <Container style={{backgroundColor: "#F2E0C2", height: "620px"}}>
             <Row>
                 <Col>
                 {/* Display A1_logo.png here: */}
