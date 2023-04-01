@@ -1,25 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import {Container, Spinner, Navbar, Button} from "react-bootstrap";
+import PanelHome from './components/PanelHome';
+import PanelStore from './components/PanelStore';
+import PanelProfile from './components/PanelProfile';
+import Error from './components/Error';
+
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <div>
+
+        <Routes>
+            <Route exact path={"/"} element={<PanelHome/>}/>
+            <Route exact path={"/store"} element={<PanelStore/>}/>
+            <Route exact path={"/profile"} element={<PanelProfile/>}/>
+            <Route path='*' element={<Error />} />
+        </Routes>
     </div>
-  );
+    </div>
+);
 }
 
 export default App;
