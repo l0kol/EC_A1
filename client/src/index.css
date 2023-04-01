@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', ''
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,12 +12,29 @@ code {
     monospace;
 }
 
-/* Set image rendering to pixelated */
 
+@font-face {
+  font-family: "DOS";   /*Can be any text*/
+  src: local("DOS"),
+    url("./fonts/DOS.ttf") format("truetype");
+}
 
 
 img {
   image-rendering: pixelated
 }
+
+.logo {
+  animation-name : mymove;
+  animation-iteration-count : infinite;
+  animation-direction : alternate;
+  animation-duration : 2s;
+}
+
+@keyframes mymove {
+  from {transform: translateY(0px);}
+  to {transform: translateY(42px);}
+}
+
 
 

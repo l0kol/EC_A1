@@ -7,6 +7,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import {BrowserRouter} from "react-router-dom";
 import { CookiesProvider } from 'react-cookie';
 import {ContextWrapper} from "./Context/context";
+import "./fonts/DOS.ttf"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
