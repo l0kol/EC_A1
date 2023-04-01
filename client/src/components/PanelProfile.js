@@ -50,7 +50,7 @@ const PanelProfile = () => {
             <hr style={{background: "#C0322A", height: "5px", border: "none"}}/>
 
             <Row style={{marginLeft:"20px", fontSize:"25px"}}>
-                Zrna: 1000<img src="zrnocoin.png" alt="zrno" style={{width: "50px"}}/>
+                Zrna: 1000<img src="zrnocoin.png" alt="zrno" style={{width: "50px", height: "50px"}}/>
             </Row>
 
             <hr style={{background: "#C0322A", height: "5px", border: "none"}}/>
