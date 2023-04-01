@@ -20,6 +20,18 @@ function App() {
   useEffect(() => {
     // context.setLoadingMain(true);
 
+    const post = context.apiForumPostsFetch()
+        .then(data => {
+          console.log(data);
+            let contectPosts = context.posts;
+            contectPosts.posts = data.posts;
+        
+        context.setPosts({ ...contectPosts })
+        }).catch(e => console.log(e))
+
+
+        
+
 
     //Load user data
     const user = context.apiUserFetch()

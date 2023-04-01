@@ -5,7 +5,7 @@ const dataSchema = new mongoose.Schema({
         required: true,
         type: String
     },
-    body: {
+    content: {
         required: true,
         type: String
     },
@@ -17,6 +17,10 @@ const dataSchema = new mongoose.Schema({
         required: true,
         type: String
     },
+    topic: {
+        required: true,
+        type: String
+    }
 
 })
 

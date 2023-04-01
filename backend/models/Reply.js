@@ -5,7 +5,7 @@ const dataSchema = new mongoose.Schema({
         required: true,
         type: String
     },
-    body: {
+    content: {
         required: true,
         type: String
     },

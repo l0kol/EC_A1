@@ -21,6 +21,31 @@ export const ContextWrapper = (props) => {
     //Loading state on page refresh
     const [loadingMain, setLoadingMain] = useState(false);
 
+
+    //
+    const [activeForum, setActiveForum] = useState({type: "tehnologoija", clicked: false});
+
+    const [createPostModal, SetCreatePostModal] = useState({active:false});
+
+    const [posts, setPosts] = useState([
+        {
+            id: 1,
+            title: "Test post",
+            body: "Test content",
+            createdAt: "2021-05-05T12:00:00.000Z",
+            userId: "60a9b0b0b5b5a8a0b4b0b0b0",
+        },
+        {
+            id: 2,
+            title: "Test post 2",
+            body: "Test conten sdfsdft",
+            createdAt: "2021-05-05T12:00:00.000Z",
+            userId: "60a9b0b0b5b5a8a0b4b0b0b0",
+        },
+
+    ]);
+
+
     //User
     const [user, setUser] = useState(
         {
@@ -35,8 +60,6 @@ export const ContextWrapper = (props) => {
     //User's balance on all chains
     const [usersBalances, setUsersBalances] = useState({});
 
-    //Users pending balance on all chains
-    const [usersPendingBalances, setUsersPendingBalances] = useState({});
 
 
     //Bottom notifinaction card/alert
@@ -102,11 +125,53 @@ export const ContextWrapper = (props) => {
         })
     }, [cookies.authToken])
 
+
+
+    const apiForumPostsFetch = useCallback(() => {
+        // console.log("Chain id " + chainId)
+        return new Promise(async (resolve, reject) => {
+            try {
+
+                let out = await axios.get(`forum/getPosts`, {
+
+                headers: {
+                        authorization: cookies.authToken
+                      }
+                })
+                // console.log(out.data.user)
+                resolve(out.data)
+            } catch (e) {
+                reject(e);
+            }
+        })
+    }, [cookies.authToken])
+
+    const apiForumPostCreate = useCallback((title, content, topic) => {
+        // console.log("Chain id " + chainId)
+        return new Promise(async (resolve, reject) => {
+            try {
+
+                let out = await axios.get(`forum/createPost`, {
+                params: {
+                    title: title,
+                    content: content,
+                    topic: topic
+                },
+                headers: {
+                        authorization: cookies.authToken
+                      }
+                })
+                // console.log(out.data.user)
+                resolve(out.data)
+            } catch (e) {
+                reject(e);
+            }
+        })
+    }, [cookies.authToken])
+
     return (
         <AppContext.Provider value={{
             user, setUser,
-            usersBalances, setUsersBalances,
-            usersPendingBalances, setUsersPendingBalances,
             active, setActive,
             authToken, setAuthToken,
             userId, setUserId,
@@ -115,9 +180,12 @@ export const ContextWrapper = (props) => {
             notifCard, setNotifCard,
             loadingMain, setLoadingMain,
             apiUserLogin,
-            apiUserFetch
-
-
+            apiUserFetch,
+            activeForum, setActiveForum,
+            posts, setPosts,
+            createPostModal, SetCreatePostModal,
+            apiForumPostsFetch,
+            apiForumPostCreate
         }}>
             {props.children}
         </AppContext.Provider>
