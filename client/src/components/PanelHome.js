@@ -17,14 +17,18 @@ const PanelHome = () => {
         <Container className="d-flex flex-column" style={{backgroundColor: "#F2E0C2", height: "620px"}}>
             <Row>
                 <Col>
-                {/* Display A1_logo.png here: */}
-                {/* Allign image on center here */}
                     <div >
-                        <img src="A1_logo.png" alt="A1 logo" className="logo" style={{width: "100px", height: "100px", alignSelf: "center"}} />
+                        <img src="A1_logo.png" alt="A1 logo" className="logo" style={{width: "120px", height: "120px", alignSelf: "center"}} />
                     </div>
                     
+                    <div style={{float: 'left'}}>
+                        <Button href="/profile" style={{fontFamily: "DOS",  fontSize: "2rem", backgroundColor: "black", marginTop: "4rem", borderWidth: "0", marginLeft: "0"}}>Profil</Button>
+                    </div>
                     <div style={{float: 'right'}}>
-                        <Button style={{fontFamily: "DOS"}}>Profil</Button>
+                        <Button href="/profile" style={{fontFamily: "DOS",  fontSize: "2rem", backgroundColor: "black", marginTop: "8rem", borderWidth: "0", marginLeft: "0"}}>Profil</Button>
+                    </div>
+                    <div style={{float: 'left'}}>
+                        <Button href="/profile" style={{fontFamily: "DOS",  fontSize: "2rem", backgroundColor: "black", marginTop: "4rem", borderWidth: "0", marginLeft: "0"}}>Profil</Button>
                     </div>
                 </Col>
             </Row>
