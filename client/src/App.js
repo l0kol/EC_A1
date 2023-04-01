@@ -27,8 +27,14 @@ function App() {
             console.log(data);
             let user = context.user;
             user.id = data.id;
-            user.type = data.type;
+            user.role = data.role;
             user.name = data.name;
+            user.email = data.email;
+            user.streak = data.streak;
+            user.coins = data.coins;
+            user.level = data.level;
+            user.xp = data.experience;
+            user.streakDate = data.streakDate;
 
             context.setUser({
                 ...user

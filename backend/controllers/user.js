@@ -11,7 +11,7 @@ exports.getUser = async (req, res) => {
                 id: user._id,
                 name: user.name,
                 role: user.role,
-                experience: user.state,
+                experience: user.experience,
                 level: user.level,
                 coins: user.coins,
                 streak: user.streak,

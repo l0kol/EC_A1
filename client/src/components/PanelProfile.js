@@ -7,16 +7,36 @@ import {useContext} from "react";
 import { TiShoppingCart } from 'react-icons/ti';
 import { RiQuestionAnswerLine } from 'react-icons/ri';
 
-
+import { useNavigate } from 'react-router-dom';
 
 const PanelProfile = () => {
 
     const context = useContext(AppContext);
+    const navigate = useNavigate();
+
+    async function navigateLogout(event) {
+        event.preventDefault();
+        navigate("/", {replace: true});
+        console.log("Logging out")
+        context.removeCookie("authToken");
+        context.setUser({
+            id: undefined,
+            type: "",
+            state: ""
+        })
+    }
 
 
     return (
-        <Container className="d-flex flex-column" style={{backgroundColor:"#F2E0C2", height:"740px", fontFamily: "DOS"}}>
-            <Row style={{marginTop:"10px", textAlign:"center"}} >
+        <Container className="d-flex flex-column" style={{backgroundColor:"#F2E0C2", height:"800px", fontFamily: "DOS"}}>
+           {context.user.id == undefined ? (
+               <div>
+                     <h1>Not logged in</h1>
+                </div>
+              ):
+                (
+                    <div>
+                    <Row style={{marginTop:"10px", textAlign:"center"}} >
                 <h1 href="/profile"> Profil</h1>
             </Row>
 
@@ -37,11 +57,11 @@ const PanelProfile = () => {
 
             <Row>
                 <Col style={{marginTop:"20px"}}>
-                    <h1><Badge bg="danger">level 57</Badge></h1>
+                    <h1><Badge bg="danger">level {context.user.level}</Badge></h1>
                 </Col>
                 <Col style={{marginTop:"20px"}}>
-                    <ProgressBar striped variant="danger" now={70} />
-                    <h3>3204xp</h3>
+                    <ProgressBar striped variant="danger" now={context.user.xp} />
+                    <h3>{context.user.xp}/100 xp</h3>
                 </Col>
             </Row>
 
@@ -50,7 +70,7 @@ const PanelProfile = () => {
             <hr style={{background: "#C0322A", height: "5px", border: "none"}}/>
 
             <Row style={{marginLeft:"20px", fontSize:"25px"}}>
-                Zrna: 1000<img src="zrnocoin.png" alt="zrno" style={{width: "50px", height: "50px"}}/>
+                Zrna: {context.user.coins}<img src="zrnocoin.png" alt="zrno" style={{width: "60px", height: "35px"}}/>
             </Row>
 
             <hr style={{background: "#C0322A", height: "5px", border: "none"}}/>
@@ -73,6 +93,19 @@ const PanelProfile = () => {
                 <Col><img src="kolajna.png" alt="slika kolajne" style={{width: "50px"}}/></Col>
                 <Col><img src="kolajna2.png" alt="slika kolajne" style={{width: "50px"}}/></Col>
             </Row>
+            <Row>
+                <Col style={{marginTop:"20px"}}>
+                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}}><RiQuestionAnswerLine /></Button>
+                    <p>Nastavitve</p>
+                </Col>
+                <Col style={{marginTop:"20px"}}>
+                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}} onClick={navigateLogout}><RiQuestionAnswerLine /></Button>
+                    <p>Odjava</p>
+                </Col>
+            </Row>
+            </div>
+            )
+               }
         </Container>
     )
 }

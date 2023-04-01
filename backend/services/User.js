@@ -32,6 +32,12 @@ module.exports.createUser = (name, email, password) => {
                 name: name,
                 email: email,
                 password: password,
+                level: 0,
+                coins: 0,
+                streak: 0,
+                streakDate: new Date(),
+                role: "user",
+                experience: 0,
             });
             // console.log(user)
             let result = await user.save();
