@@ -17,7 +17,8 @@ const PanelHome = () => {
         <Container>
             <Row>
                 <Col>
-                Panel Home
+                {/* Display A1_logo.png here: */}
+                    <img src="A1_logo.png" alt="A1 logo" style={{width: "100px", height: "100px"}} />
                 </Col>
             </Row>
         </Container>
