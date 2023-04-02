@@ -82,7 +82,7 @@ const PanelProfile = () => {
 
             <Row>
                 <Col style={{marginTop:"20px"}}>
-                    <h1><Badge bg="danger">level {context.user.level}</Badge></h1>
+                    <h1 ><Badge bg="danger" style={{backgroundColor:"#C0322A"}}>level {context.user.level}</Badge></h1>
                 </Col>
                 <Col style={{marginTop:"20px"}}>
                     <ProgressBar striped variant="danger" now={context.user.xp} />
@@ -118,24 +118,24 @@ const PanelProfile = () => {
                 <Col>
                     <Button onClick={handleClick1} style={{border:"none", backgroundColor:"transparent"}}><img src="kolajna.png" alt="slika kolajne" style={{width: "50px"}}/></Button>
                     {isShown1 ? (
-                        <Button variant="light" style={{position:"absolute", bottom:"-110px", right:"150px", width:"90px", fontSize:"10px", padding:"0 1px"}}>Zvesti narocnik A1</Button>
+                        <Button variant="light" style={{position:"absolute", bottom:"130px", right:"150px", width:"90px", fontSize:"10px", padding:"0 1px"}}>Zvesti narocnik A1</Button>
                     ) : null}
                 </Col>
                 <Col>
                     <Button onClick={handleClick2} style={{border:"none", backgroundColor:"transparent"}}><img src="kolajna2.png" alt="slika kolajne" style={{width: "50px"}}/></Button>
                     {isShown2 ? (
-                        <Button variant="light" style={{position:"absolute", bottom:"-110px", right:"20px", width:"90px", fontSize:"10px", padding:"0 1px"}}>Zastavil vprasanje na forumu</Button>
+                        <Button variant="light" style={{position:"absolute", bottom:"130px", right:"20px", width:"90px", fontSize:"10px", padding:"0 1px"}}>Zastavil vprasanje na forumu</Button>
                     ) : null}
                 </Col>
             </Row>
             <Row>
                 <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}}><BsGear /></Button>
-                    <p>Nastavitve</p>
+                    <Button  href="/forum" style={{fontSize:"20px", backgroundColor:"#C0322A", borderWidth: "0"}}><BsGear /></Button>
+                    {/* <p>Nastavitve</p> */}
                 </Col>
                 <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}} onClick={navigateLogout}><BiLogOut /></Button>
-                    <p>Odjava</p>
+                    <Button variant="danger" href="/forum" style={{fontSize:"20px", backgroundColor:"#C0322A", borderWidth: "0"}} onClick={navigateLogout}><BiLogOut /></Button>
+                    {/* <p>Odjava</p> */}
                 </Col>
             </Row>
             </div>
