@@ -68,3 +68,18 @@ img {
   place-items: center;
   position: relative;
 }
+
+.rise-shake {
+  animation: jump-shaking 4s infinite;
+}
+
+@keyframes jump-shaking {
+  0% { transform: translateX(0) }
+  3% { transform: translateY(-9px) }
+  6% { transform: translateY(-9px) rotate(17deg) }
+  9% { transform: translateY(-9px) rotate(-17deg) }
+  12% { transform: translateY(-9px) rotate(17deg) }
+  15% { transform: translateY(-9px) rotate(-17deg) }
+  18% { transform: translateY(0) rotate(0) }
+  100% { transform: translateY(0) rotate(0) }
+}

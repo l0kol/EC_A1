@@ -58,7 +58,7 @@ const PanelStore = () => {
                 <div style={{width:"20%"}}></div>
 
                 <div style={{width:"30%"}}>
-                    <Button variant="warning" style={{fontSize:"30px"}} onClick={() => context.SetCreatePostModal({open:true})}><BsFillGiftFill />x3</Button>
+                    <Button variant="warning" className="rise-shake" style={{fontSize:"30px"}} onClick={() => context.SetCreatePostModal({open:true})}><BsFillGiftFill />x3</Button>
                     <p style={{fontSize:"18px"}}>Nagrade!</p>
                 </div>
             </Row>
