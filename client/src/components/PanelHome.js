@@ -57,6 +57,20 @@ const PanelHome = () => {
                 </div>
                 </Col>
             </Row>
+            <Row>
+                <Col>
+                <div style={{float: 'right'}}>
+                    <Button variant="dark" href="/devices" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Naprave</Button>
+                </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                <div style={{float: 'left'}}>
+                    <Button variant="dark" href="/room" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Dnevna soba</Button>
+                </div>
+                </Col>
+            </Row>
         </Container>
     )
 }
