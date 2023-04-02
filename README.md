@@ -61,7 +61,7 @@ EC_A1
         ├───fonts
         └───images
 </code>
-\\
+</br></br></br>
 ## Entitete z atributi
 
 <code>
