@@ -7,7 +7,7 @@ import { TiShoppingCart } from 'react-icons/ti';
 import { RiQuestionAnswerLine } from 'react-icons/ri';
 import { RxPerson } from 'react-icons/rx';
 import { BsFillGiftFill } from "react-icons/bs";
-import { MdPhoneIphone, MdTv, MdVideogameAsset } from "react-icons/md";
+import { MdPhoneIphone, MdTv, MdVideogameAsset, MdConnectedTv, MdOutlineDevicesOther, MdDiversity1 } from "react-icons/md";
 import { GoPackage } from "react-icons/go";
 
 import NewPostModal from "./mixed/NewPostModal";
@@ -23,31 +23,39 @@ const PanelStore = () => {
 
     return (
         <Container className="d-flex flex-column" style={{backgroundColor:"#F2E0C2", height:"800px", fontFamily: "DOS"}}>
-            <Row style={{marginTop:"10px", textAlign:"center"}} >
+            <Row style={{marginTop:"15px", textAlign:"center"}} >
                 <h1 href="/store">> Trgovina</h1>
             </Row>
 
-            <Row className="d-flex flex-row" style={{margin:"0 -20px 0 -20px"}}>
-                <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}}><RiQuestionAnswerLine /></Button>
-                    <p>Forum</p>
+            {/* navigacija */}
+            <Row className="d-flex flex-row">
+                <Col style={{marginTop:"10px"}}>
+                    <Button href="/forum" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><RiQuestionAnswerLine /></Button>
+                    <p style={{marginBottom:"3px"}}>Forum</p>
+                    <Button href="/room" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><MdConnectedTv /></Button>
+                    <p style={{marginBottom:"3px"}}>Soba</p>
                 </Col>
-                <Col  style={{marginTop:"50px"}}>
-                    <Button variant="danger" href="/store" style={{fontSize:"75px", width:"130px", height:"130px"}}><TiShoppingCart /></Button>
+                <Col style={{alignItems:"center"}}>
+                    <Button href="/store" style={{fontSize:"70px", backgroundColor:"#22242E", border:"none", margin:"35px", padding:"5px 20px", borderRadius:"15%"}}><TiShoppingCart /></Button>
                 </Col>
-                <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/profile" style={{fontSize:"30px"}}><RxPerson /></Button>
-                    <p>Profil</p>
+                <Col style={{marginTop:"10px"}}>
+                    <Button href="/devices" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><MdOutlineDevicesOther /></Button>
+                    <p style={{marginBottom:"3px"}}>Naprave</p>
+                    <Button href="/profile" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><RxPerson /></Button>
+                    <p style={{marginBottom:"3px"}}>Profil</p>
                 </Col>
             </Row>
+            <hr style={{background: "#C0322A", height: "5px", border: "none", radius:"3%", margin:"5px 30px"}}/>
+            <Button href="/" style={{position: "absolute", bottom: "10px", left: "10px", width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "#6CB4EE", border: "none", textDecoration:"none", fontSize:"14px", boxShadow:"1px 1px 3px 3px #22242E"}}><p style={{position:"absolute", bottom:"-1px", left:"6px"}}>DOMOV</p></Button>
+            {/* navigacija */}
 
-            <Row style={{marginTop:"40px", marginBottom:"5px"}}>
+            <Row style={{marginTop:"15px", marginBottom:"5px"}}>
                 <div style={{width:"45%"}}>
                     <Button variant="warning" href="/ugodnosti" style={{fontSize:"30px"}}>>Ugodnosti!</Button>
                     <p style={{fontSize:"18px"}}>Stanje: 1000 <img src="zrnocoin.png" alt="zrno" style={{width: "20px"}}/></p>
                 </div>
 
-                <div style={{width:"25%"}}></div>
+                <div style={{width:"20%"}}></div>
 
                 <div style={{width:"30%"}}>
                     <Button variant="warning" style={{fontSize:"30px"}} onClick={() => context.SetCreatePostModal({open:true})}><BsFillGiftFill />x3</Button>
@@ -55,32 +63,31 @@ const PanelStore = () => {
                 </div>
             </Row>
 
-            <hr style={{background: "#C0322A", height: "5px", border: "none", borderRadius:"3px"}}/>
-            <Row style={{marginTop:"25px"}}></Row>
+            <Row style={{marginTop:"30px"}}></Row>
 
             <Row>
                 <div style={{marginTop:"50px", width:"45%"}}>
-                    <Row>
-                        <Button variant="dark" style={{fontSize:"30px"}}>Telefoni</Button>
+                    <div>
+                        <Button variant="dark" style={{fontSize:"20px", width:"100%"}}>Telefoni</Button>
                         <p style={{fontSize:"50px"}}><MdPhoneIphone /></p>
-                    </Row>
-                    <Row>
-                        <Button variant="dark" style={{fontSize:"30px"}}>Televizija</Button>
+                    </div>
+                    <div>
+                        <Button variant="dark" style={{fontSize:"20px", width:"100%"}}>Televizija</Button>
                         <p style={{fontSize:"50px"}}><MdTv /></p>
-                    </Row>
+                    </div>
                 </div>
 
                 <div style={{width:"10%"}}></div>
 
                 <div style={{width:"45%"}}>
-                    <Row>
-                        <Button variant="dark" style={{fontSize:"30px"}}>Paketi</Button>
+                    <div>
+                        <Button variant="dark" style={{fontSize:"20px", width:"100%"}}>Paketi</Button>
                         <p style={{fontSize:"50px"}}><GoPackage /></p>
-                    </Row>
-                    <Row>
-                        <Button variant="dark" style={{fontSize:"30px"}}>Zabava</Button>
+                    </div>
+                    <div>
+                        <Button variant="dark" style={{fontSize:"20px", width:"100%"}}>Zabava</Button>
                         <p style={{fontSize:"50px"}}><MdVideogameAsset /></p>
-                    </Row>
+                    </div>
                 </div>
             </Row>
 

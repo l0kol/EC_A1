@@ -6,6 +6,8 @@ import {useContext} from "react";
 
 import { TiShoppingCart } from 'react-icons/ti';
 import { RiQuestionAnswerLine } from 'react-icons/ri';
+import { MdOutlineDevicesOther, MdConnectedTv } from "react-icons/md";
+import { RxPerson } from 'react-icons/rx';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -35,25 +37,32 @@ const PanelProfile = () => {
                 </div>
               ):
                 (
-                    <div>
-                    <Row style={{marginTop:"10px", textAlign:"center"}} >
-                <h1 href="/profile"> Profil</h1>
-            </Row>
+                <div>
+                    <Row style={{marginTop:"15px", textAlign:"center"}} >
+                        <h1 href="/profile">> Profil</h1>
+                    </Row>
 
-            <Row className="d-flex flex-row" style={{margin:"0 -20px 0 -20px"}}>
-                <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}}><RiQuestionAnswerLine /></Button>
-                    <p>Forum</p>
-                </Col>
-                <Col  style={{marginTop:"20px"}}>
-                <img src="zrno_framed.png" alt="slika uporabnika" style={{width: "130px", height: "130px"}} />
-                <h3><Badge bg="dark" style={{fontWeight:"400"}}><figcaption>{context.user.name}</figcaption></Badge></h3>
-                </Col>
-                <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/store" style={{fontSize:"30px"}}><TiShoppingCart /></Button>
-                    <p>Trgovina</p>
-                </Col>
-            </Row>
+                    {/* navigacija */}
+                    <Row className="d-flex flex-row">
+                        <Col style={{marginTop:"10px"}}>
+                            <Button href="/forum" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><RiQuestionAnswerLine /></Button>
+                            <p style={{marginBottom:"3px"}}>Forum</p>
+                            <Button href="/room" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><MdConnectedTv /></Button>
+                            <p style={{marginBottom:"3px"}}>Soba</p>
+                        </Col>
+                        <Col style={{alignItems:"center"}}>
+                            <Button href="/profile" style={{fontSize:"70px", backgroundColor:"#22242E", border:"none", margin:"35px", padding:"5px 20px", borderRadius:"15%"}}><RxPerson /></Button>
+                        </Col>
+                        <Col style={{marginTop:"10px"}}>
+                            <Button href="/store" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><TiShoppingCart /></Button>
+                            <p style={{marginBottom:"3px"}}>Trgovina</p>
+                            <Button href="/devices" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><MdOutlineDevicesOther /></Button>
+                            <p style={{marginBottom:"3px"}}>Naprave</p>
+                        </Col>
+                    </Row>
+                    <hr style={{background: "#C0322A", height: "5px", border: "none", radius:"3%", margin:"5px 30px"}}/>
+                    <Button href="/" style={{position: "absolute", bottom: "10px", left: "10px", width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "#6CB4EE", border: "none", textDecoration:"none", fontSize:"14px", boxShadow:"1px 1px 3px 3px #22242E"}}><p style={{position:"absolute", bottom:"-1px", left:"6px"}}>DOMOV</p></Button>
+                    {/* navigacija */}
 
             <Row>
                 <Col style={{marginTop:"20px"}}>

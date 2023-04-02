@@ -7,9 +7,8 @@ import { TiShoppingCart } from 'react-icons/ti';
 import { RiQuestionAnswerLine } from 'react-icons/ri';
 import { RxPerson } from 'react-icons/rx';
 import { BsFillGiftFill } from "react-icons/bs";
-import { MdPhoneIphone, MdTv, MdVideogameAsset, MdConnectedTv } from "react-icons/md";
+import { MdPhoneIphone, MdTv, MdVideogameAsset, MdConnectedTv, MdStraight, MdOutlineDevicesOther } from "react-icons/md";
 import { GoPackage } from "react-icons/go";
-
 
 
 
@@ -20,41 +19,86 @@ const PanelRoom = () => {
 
     return (
         <Container className="d-flex flex-column" style={{backgroundColor:"#F2E0C2", height:"800px", fontFamily: "DOS"}}>
-            <Row style={{marginTop:"10px", textAlign:"center"}} >
-                <h1 href="/store">> Dnevna soba</h1>
+            <Row style={{marginTop:"15px", textAlign:"center"}} >
+                <h1 href="/room">> Dnevna soba</h1>
             </Row>
 
-            <Row className="d-flex flex-row" style={{margin:"0 -20px 0 -20px"}}>
-                <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}}><RiQuestionAnswerLine /></Button>
-                    <p>Forum</p>
+            {/* navigacija */}
+            <Row className="d-flex flex-row">
+                <Col style={{marginTop:"10px"}}>
+                    <Button href="/forum" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><RiQuestionAnswerLine /></Button>
+                    <p style={{marginBottom:"3px"}}>Forum</p>
+                    <Button href="/devices" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><MdOutlineDevicesOther /></Button>
+                    <p style={{marginBottom:"3px"}}>Naprave</p>
                 </Col>
-                <Col  style={{marginTop:"50px"}}>
-                    <Button variant="danger" href="/room" style={{fontSize:"75px", width:"130px", height:"130px"}}><MdConnectedTv /></Button>
+                <Col style={{alignItems:"center"}}>
+                    <Button href="/room" style={{fontSize:"70px", backgroundColor:"#22242E", border:"none", margin:"35px", padding:"5px 20px", borderRadius:"15%"}}><MdConnectedTv /></Button>
                 </Col>
-                <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/profile" style={{fontSize:"30px"}}><RxPerson /></Button>
-                    <p>Profil</p>
+                <Col style={{marginTop:"10px"}}>
+                    <Button href="/store" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><TiShoppingCart /></Button>
+                    <p style={{marginBottom:"3px"}}>Trgovina</p>
+                    <Button href="/profile" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><RxPerson /></Button>
+                    <p style={{marginBottom:"3px"}}>Profil</p>
                 </Col>
             </Row>
+            <hr style={{background: "#C0322A", height: "5px", border: "none", radius:"3%", margin:"5px 30px"}}/>
+            <Button href="/" style={{position: "absolute", bottom: "10px", left: "10px", width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "#6CB4EE", border: "none", textDecoration:"none", fontSize:"14px", boxShadow:"1px 1px 3px 3px #22242E"}}><p style={{position:"absolute", bottom:"-1px", left:"6px"}}>DOMOV</p></Button>
+            {/* navigacija */}
 
-
-
+            <h3 style={{textAlign:"left", marginTop:"20px", marginBottom:"20px"}}>> Kolegi</h3>
             <div style={{marginTop:"20px", marginBottom:"5px"}}>
-                <h3 style={{textAlign:"left", marginTop:"60px", marginBottom:"30px"}}>> Kolegi</h3>
                 <Row>
-                    <Col style={{width:"30px"}}><img src="zrno3.png" alt="slika uporabnika" style={{width: "50px"}}/></Col>
-                    <Col style={{width:"40px"}}><Badge bg="dark" style={{fontWeight:"400"}}>Lado</Badge></Col>
-                    <Col style={{width:"200px"}}>
+                    <Col>
+                        <div>
+                            <img src="zrno3.png" alt="slika uporabnika" style={{width: "50px"}}/>
+                            <Badge bg="dark" style={{fontWeight:"400", marginLeft:"10px"}}>Lado</Badge>
+                        </div>
+                    </Col>
+                    <Col style={{margin:"0 10px"}}>
                         <Row style={{fontSize:"10px"}}>TRENUTNO GLEDA:</Row>
                         <Row>Ne joci Peter</Row>
                     </Col>
                 </Row>
              </div> 
+             <div style={{marginTop:"20px", marginBottom:"5px"}}>
+                <Row>
+                    <Col>
+                        <div>
+                            <img src="zrno4.png" alt="slika uporabnika" style={{width: "50px"}}/>
+                            <Badge bg="dark" style={{fontWeight:"400", marginLeft:"10px"}}>Cveto</Badge>
+                        </div>
+                    </Col>
+                    <Col style={{margin:"0 10px"}}>
+                        <Row style={{fontSize:"10px"}}>TRENUTNO GLEDA:</Row>
+                        <Row>Kokosja vecerja</Row>
+                    </Col>
+                </Row>
+             </div> 
 
-            <div style={{marginTop:"20px", marginBottom:"5px"}}>
-                <h3 style={{textAlign:"left", marginTop:"60px", marginBottom:"30px"}}>> Skupno gledanje</h3>
+            <h3 style={{textAlign:"left", marginTop:"60px", marginBottom:"20px"}}>> Skupno gledanje</h3>
+            <div style={{margin:"20px", marginBottom:"5px"}}>
+                <Row style={{fontSize:"10px"}}>TRENUTNO GLEDAS:</Row>
+                <Row style={{marginBottom:"20px"}}>Nasa Mala Klinika</Row>
+                <Row style={{fontSize:"10px"}}>S TEBOJ V SOBI SO:</Row>
+                <Row>
+                    <Col>
+                        <div>
+                            <img src="zrno1.png" alt="slika uporabnika" style={{width: "50px"}}/>
+                            <Badge bg="dark" style={{fontWeight:"400", marginLeft:"10px"}}>Gojmir</Badge>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div>
+                            <img src="zrno2.png" alt="slika uporabnika" style={{width: "50px"}}/>
+                            <Badge bg="dark" style={{fontWeight:"400", marginLeft:"10px"}}>Robert</Badge>
+                        </div>
+                    </Col>
+                </Row>
+                
+                <Button style={{position: "absolute", bottom: "10px", right: "10px", width: "100px", height: "50px", borderRadius: "20%", backgroundColor: "#22242E", border: "none", fontSize: "1rem"}} onClick={() => context.SetCreatePostModal({open:true})}><MdStraight />Debata</Button>
+
             </div>
+
         </Container>
     )
 }

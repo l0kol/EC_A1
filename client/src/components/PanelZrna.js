@@ -24,6 +24,7 @@ const PanelZrna = () => {
             <Row style={{marginTop:"10px", textAlign:"center"}} >
                 <h1 href="/store">> Kje dobim zrna <img src="../zrnocoin.png" alt="zrno" style={{width: "30px"}}/>?</h1>
             </Row>
+            <Button href="/" style={{position: "absolute", bottom: "10px", left: "10px", width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "#6CB4EE", border: "none", textDecoration:"none", fontSize:"14px", boxShadow:"1px 1px 3px 3px #22242E"}}><p style={{position:"absolute", bottom:"-1px", left:"6px"}}>DOMOV</p></Button>
 
             <Row>
                 <h3 style={{textAlign:"left", marginTop:"60px", marginBottom:"30px"}}>>XP (izkusenjske tocke)</h3>
