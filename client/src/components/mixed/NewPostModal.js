@@ -7,8 +7,6 @@ import * as yup from 'yup';
 
 const NewPostModal = () => {
     const context = useContext(AppContext);
-    const [chain, setChain]  = useState(0);
-
 
     const postSchema = yup.object({
         title: yup.string().required(),

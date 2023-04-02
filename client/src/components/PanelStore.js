@@ -10,6 +10,9 @@ import { BsFillGiftFill } from "react-icons/bs";
 import { MdPhoneIphone, MdTv, MdVideogameAsset } from "react-icons/md";
 import { GoPackage } from "react-icons/go";
 
+import NewPostModal from "./mixed/NewPostModal";
+// import WheelOfFortuneModal from "./mixed/WheelOfFortune";
+
 
 
 
@@ -47,7 +50,7 @@ const PanelStore = () => {
                 <div style={{width:"25%"}}></div>
 
                 <div style={{width:"30%"}}>
-                    <Button variant="warning" style={{fontSize:"30px"}}><BsFillGiftFill />x3</Button>
+                    <Button variant="warning" style={{fontSize:"30px"}} onClick={() => context.SetCreatePostModal({open:true})}><BsFillGiftFill />x3</Button>
                     <p style={{fontSize:"18px"}}>Nagrade!</p>
                 </div>
             </Row>
@@ -80,6 +83,9 @@ const PanelStore = () => {
                     </Row>
                 </div>
             </Row>
+
+        
+        <NewPostModal />
 
         </Container>
     )
