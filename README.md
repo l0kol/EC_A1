@@ -1,8 +1,7 @@
 # EC_A1
 
 ## Struktura aplikacije
-<code>
-EC_A1
+<code>EC_A1
 |
 ├───backend
     ├───controllers
@@ -59,6 +58,232 @@ EC_A1
         ├───Context
                  └───context.js
         ├───fonts
-        └───images
-</code>
+        └───images</code>
+
+## Entitete z atributi
+
+<code>User = ({
+	name: {
+    	required: true,
+    	type: String
+	},
+	age: {
+    	required: false,
+    	type: Number
+	},
+	email: {
+    	required: true,
+    	type: String
+	},
+	password: {
+    	required: true,
+    	type: String
+	},
+	level: {
+    	required: false,
+    	type: Number
+	},
+	experience: {
+    	required: false,
+    	type: Number
+	},
+	coins: {
+    	required: false,
+    	type: Number
+	},
+	streak: {   
+    	required: false,
+    	type: Number
+	},
+	streakDate: {
+    	required: false,
+    	type: Date
+	},
+	role: {
+    	required: false,
+    	type: String
+	},
+})
+
+
+
+
+
+
+Device = ({
+	name: {
+    	required: true,
+    	type: String
+	},
+	purchasedAt: {
+    	required: true,
+    	type: Date
+	},
+	userId: {
+    	required: true,
+    	type: String
+	},
+    
+})
+
+------------------------------------------------------------------------------------------------------------------------
+
+Badge = ({
+	name: {
+    	required: true,
+    	type: String
+	},
+	purchasedAt: {
+    	required: true,
+    	type: Date
+	},
+	userId: {
+    	required: true,
+    	type: String
+	},
+    
+})
+
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Topic = ({
+	name: {
+    	required: true,
+    	type: String
+	},
+	body: {
+    	required: true,
+    	type: String
+	},
+	createdAt: {
+    	required: true,
+    	type: Date
+	},
+	userId: {
+    	required: true,
+    	type: String
+	},
+})
+
+--------------------------------------------------------------------------------------------------------------------
+Post = ({
+	title: {
+    	required: true,
+    	type: String
+	},
+	content: {
+    	required: true,
+    	type: String
+	},
+	createdAt: {
+    	required: true,
+    	type: Date
+	},
+	userId: {
+    	required: true,
+    	type: String
+	},
+	topic: {
+    	required: true,
+    	type: String
+	}
+
+})
+
+
+
+
+Reply = ({
+	postId: {
+    	required: true,
+    	type: String
+	},
+	content: {
+    	required: true,
+    	type: String
+	},
+	createdAt: {
+    	required: true,
+    	type: Date
+	},
+	userId: {
+    	required: true,
+    	type: String
+	},
+	upvotes: {
+    	required: true,
+    	type: Number
+	},
+	downvotes: {
+    	required: true,
+    	type: Number
+	}
+})
+
+--------------------------------------------------------------------------------------------------------------------
+Product = ({
+	//array of elements
+	name: {
+    	required: true,
+    	type: String
+	},
+	price: {
+    	required: true,
+    	type: Number
+	},
+	createdAt: {
+    	required: true,
+    	type: Date
+	},
+	experienceGain: {
+    	required: true,
+    	type: Number
+	},
+})
+
+Wheel = ({
+	//array of elements
+	elements: {
+    	required: true,
+    	type: Array
+	},
+	createdAt: {
+    	required: true,
+    	type: Date
+	},
+})
+
+--------------------------------------------------------------------------------------------------------------------
+Element = ({
+	//array of elements
+	name: {
+    	required: true,
+    	type: String
+	},
+	createdAt: {
+    	required: true,
+    	type: Date
+	},
+	wheelId: {
+    	required: true,
+    	type: String
+	},
+	value: {
+    	required: true,
+    	type: Number
+	},
+})<code>
 
