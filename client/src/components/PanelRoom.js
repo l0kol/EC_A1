@@ -1,21 +1,33 @@
 import {Col, Container, ListGroup, Row, Spinner, Button, Badge} from "react-bootstrap";
 import { AppContext } from "../Context/context";
 
-import {useContext} from "react";
+import {useContext, useState} from "react";
 
 import { TiShoppingCart } from 'react-icons/ti';
 import { RiQuestionAnswerLine } from 'react-icons/ri';
 import { RxPerson } from 'react-icons/rx';
 import { BsFillGiftFill } from "react-icons/bs";
-import { MdPhoneIphone, MdTv, MdVideogameAsset, MdConnectedTv, MdStraight, MdOutlineDevicesOther } from "react-icons/md";
+import { MdPhoneIphone, MdTv, MdVideogameAsset, MdConnectedTv, MdStraight, MdOutlineDevicesOther, MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { GoPackage } from "react-icons/go";
-
 
 
 const PanelRoom = () => {
 
     const context = useContext(AppContext);
 
+    const [isShown1, setIsShown1] = useState(false);
+    const handleClick1 = event => {
+        //toggle shown state
+        setIsShown1(current1 => !current1);
+    };
+
+    const [isShown2, setIsShown2] = useState(false);
+    const handleClick2 = event => {
+        //toggle shown state
+        setIsShown2(current2 => !current2);
+    };
+
+    
 
     return (
         <Container className="d-flex flex-column" style={{backgroundColor:"#F2E0C2", height:"800px", fontFamily: "DOS"}}>
@@ -45,37 +57,54 @@ const PanelRoom = () => {
             <Button href="/" style={{position: "absolute", bottom: "10px", left: "10px", width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "#6CB4EE", border: "none", textDecoration:"none", fontSize:"14px", boxShadow:"1px 1px 3px 3px #22242E"}}><p style={{position:"absolute", bottom:"-1px", left:"6px"}}>DOMOV</p></Button>
             {/* navigacija */}
 
-            <h3 style={{textAlign:"left", marginTop:"20px", marginBottom:"20px"}}>> Kolegi</h3>
-            <div style={{marginTop:"20px", marginBottom:"5px"}}>
-                <Row>
-                    <Col>
-                        <div>
-                            <img src="zrno3.png" alt="slika uporabnika" style={{width: "50px"}}/>
-                            <Badge bg="dark" style={{fontWeight:"400", marginLeft:"10px"}}>Lado</Badge>
-                        </div>
-                    </Col>
-                    <Col style={{margin:"0 10px"}}>
-                        <Row style={{fontSize:"10px"}}>TRENUTNO GLEDA:</Row>
-                        <Row>Ne joci Peter</Row>
-                    </Col>
-                </Row>
-             </div> 
-             <div style={{marginTop:"20px", marginBottom:"5px"}}>
-                <Row>
-                    <Col>
-                        <div>
-                            <img src="zrno4.png" alt="slika uporabnika" style={{width: "50px"}}/>
-                            <Badge bg="dark" style={{fontWeight:"400", marginLeft:"10px"}}>Cveto</Badge>
-                        </div>
-                    </Col>
-                    <Col style={{margin:"0 10px"}}>
-                        <Row style={{fontSize:"10px"}}>TRENUTNO GLEDA:</Row>
-                        <Row>Kokosja vecerja</Row>
-                    </Col>
-                </Row>
-             </div> 
+            <Button onClick={handleClick1} style={{backgroundColor:"transparent", border:"none", color:"black", fontWeight:"400"}}><h3 style={{textAlign:"left", marginTop:"20px", marginBottom:"20px"}}>> Kolegi</h3></Button>
+            {isShown1 ? <Segment1 /> : null}
+            
 
-            <h3 style={{textAlign:"left", marginTop:"60px", marginBottom:"20px"}}>> Skupno gledanje</h3>
+            <Button onClick={handleClick2} style={{backgroundColor:"transparent", border:"none", color:"black", fontWeight:"400"}}><h3 style={{textAlign:"left", marginTop:"60px", marginBottom:"20px"}}>> Skupno gledanje</h3></Button>
+            {isShown2 ? <Segment2 /> : null}
+                
+            <Button style={{position: "absolute", bottom: "10px", right: "10px", width: "100px", height: "50px", borderRadius: "20%", backgroundColor: "#22242E", border: "none", fontSize: "1rem"}} onClick={() => context.SetCreatePostModal({open:true})}><MdStraight />Debata</Button>
+        </Container>
+    )
+
+    function Segment1() {
+        return (
+            <div>
+                <div style={{marginTop:"20px", marginBottom:"5px"}}>
+                    <Row>
+                        <Col>
+                            <div>
+                                <img src="zrno3.png" alt="slika uporabnika" style={{width: "50px"}}/>
+                                <Badge bg="dark" style={{fontWeight:"400", marginLeft:"10px"}}>Lado</Badge>
+                            </div>
+                        </Col>
+                        <Col style={{margin:"0 10px"}}>
+                            <Row style={{fontSize:"10px"}}>TRENUTNO GLEDA:</Row>
+                            <Row>Ne joci Peter</Row>
+                        </Col>
+                    </Row>
+                </div> 
+                <div style={{marginTop:"20px", marginBottom:"5px"}}>
+                    <Row>
+                        <Col>
+                            <div>
+                                <img src="zrno4.png" alt="slika uporabnika" style={{width: "50px"}}/>
+                                <Badge bg="dark" style={{fontWeight:"400", marginLeft:"10px"}}>Cveto</Badge>
+                            </div>
+                        </Col>
+                        <Col style={{margin:"0 10px"}}>
+                            <Row style={{fontSize:"10px"}}>TRENUTNO GLEDA:</Row>
+                            <Row>Kokosja vecerja</Row>
+                        </Col>
+                    </Row>
+                </div>
+            </div>
+        );
+    }
+
+    function Segment2() {
+        return(
             <div style={{margin:"20px", marginBottom:"5px"}}>
                 <Row style={{fontSize:"10px"}}>TRENUTNO GLEDAS:</Row>
                 <Row style={{marginBottom:"20px"}}>Nasa Mala Klinika</Row>
@@ -94,13 +123,9 @@ const PanelRoom = () => {
                         </div>
                     </Col>
                 </Row>
-                
-                <Button style={{position: "absolute", bottom: "10px", right: "10px", width: "100px", height: "50px", borderRadius: "20%", backgroundColor: "#22242E", border: "none", fontSize: "1rem"}} onClick={() => context.SetCreatePostModal({open:true})}><MdStraight />Debata</Button>
-
             </div>
-
-        </Container>
-    )
+        );
+    }
 }
 
 export default PanelRoom;
