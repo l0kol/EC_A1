@@ -46,28 +46,28 @@ const PanelHome = () => {
             <Row>
                 <Col>
                 <div style={{float: 'right'}}>
-                    <Button variant="dark" href="/store" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Trgovina</Button>
+                    <Button variant="dark" href="/store" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "1.5rem", borderWidth: "3px", marginLeft: "0"}}>Trgovina</Button>
                 </div>
                 </Col>
             </Row>
             <Row>
                 <Col>
                 <div style={{float: 'left'}}>
-                    <Button variant="dark" href="/forum" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Forum</Button>
+                    <Button variant="dark" href="/forum" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "1.5rem", borderWidth: "3px", marginLeft: "0"}}>Forum</Button>
                 </div>
                 </Col>
             </Row>
             <Row>
                 <Col>
                 <div style={{float: 'right'}}>
-                    <Button variant="dark" href="/devices" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Naprave</Button>
+                    <Button variant="dark" href="/devices" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "1.5rem", borderWidth: "3px", marginLeft: "0"}}>Naprave</Button>
                 </div>
                 </Col>
             </Row>
             <Row>
                 <Col>
                 <div style={{float: 'left'}}>
-                    <Button variant="dark" href="/room" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "3rem", borderWidth: "3px", marginLeft: "0"}}>Dnevna soba</Button>
+                    <Button variant="dark" href="/room" style={{fontFamily: "DOS",  fontSize: "2rem", marginTop: "1.5rem", borderWidth: "3px", marginLeft: "0"}}>Dnevna soba</Button>
                 </div>
                 </Col>
             </Row>
