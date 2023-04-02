@@ -46,14 +46,14 @@ const WheelOfFortuneModal = () => {
                 }}
             >
             <div className='modal-confirm-container' style={{backgroundColor: "white"}}>
-            <h3 > Zavrtiii monaaa </h3> 
+            <h3 > Zavrti me </h3> 
 
             <img src="wheel_of_fortune.gif" alt="wheel" style={{width: "300px"}}/>
 
             
             <Row>
             <Col>
-            <Button variant="btn btn-success active" type='submit' style={{backgroundColor: "green", margin: "1rem"}}>Povleci</Button>
+            <Button variant="btn btn-success active" type='submit' style={{backgroundColor: "green", margin: "1rem"}}>Zavrti</Button>
             
             </Col>
             <Col>
