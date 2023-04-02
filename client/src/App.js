@@ -12,6 +12,8 @@ import PanelZrna from './components/PanelZrna';
 import Error from './components/Error';
 import {AppContext} from "./Context/context";
 
+import Profile from './components/ProfileMock';
+
 import {useContext} from "react";
 
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
@@ -79,6 +81,9 @@ function App() {
             <Route exact path={"/room"} element={<PanelRoom/>}/>
             <Route exact path={"/ugodnosti"} element={<PanelUgodnosti/>}/>
             <Route exact path={"/ugodnosti/zrna"} element={<PanelZrna/>}/>
+
+            <Route exact path={"/p"} element={<Profile/>}/>
+
             <Route path='*' element={<Error />} />
         </Routes>
     </div>
