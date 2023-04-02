@@ -41,7 +41,7 @@ exports.create = async (req, res) => {
         }
 
         let post = await servicePost.createPost(req.query.title, req.query.content, req.query.topic, req.query.userId);
-
+        console.log(post)
         return res.status(200).json({
             post: post._id,
             title: req.query.title,

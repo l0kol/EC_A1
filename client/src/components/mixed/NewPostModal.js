@@ -23,10 +23,16 @@ const NewPostModal = () => {
     const confirm = async (title, body) => {
         try {
             let response = await context.apiForumPostCreate(title, body, "narocnine");
-            console.log(response);
+            console.log(response.createdAt);
 
             let posts = context.posts;
+
+            let date = new Date(response.createdAt);
+            console.log(date)
+            response.time = await date.getHours() + ":" + date.getMinutes();
+            console.log(response.time)
             posts.posts.unshift(response);
+
             context.setPosts({ ...posts })
 
 

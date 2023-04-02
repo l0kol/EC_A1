@@ -20,6 +20,7 @@ const ForumPosti = () => {
        let mappedPosts = context.posts["posts"].map ((post) => {
              let date = new Date(post.createdAt);
              console.log(date.getHours() + ":" + date.getMinutes())
+             console.log(post.createdAt)
              post.time = date.getHours() + ":" + date.getMinutes();
         })
 
