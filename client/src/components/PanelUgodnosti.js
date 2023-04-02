@@ -34,7 +34,7 @@ const PanelUgodnosti = () => {
                     <p>V trgovino</p>
                 </Col>
                 <Col  style={{marginTop:"50px"}}>
-                    <Button variant="dark">Stanje: 1000 <img src="zrnocoin.png" alt="zrno" style={{width: "20px"}}/></Button>
+                    <Button variant="dark">Stanje: {context.user.coins} <img src="zrnocoin.png" alt="zrno" style={{width: "20px"}}/></Button>
                 </Col>
                 <Col style={{marginTop:"20px"}}>
                     <img src="A1_logo.png" alt="A1 logo" style={{width: "60px", height: "60px"}} />

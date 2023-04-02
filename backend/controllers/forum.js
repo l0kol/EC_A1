@@ -47,7 +47,7 @@ exports.create = async (req, res) => {
             title: req.query.title,
             content: req.query.content,
             topic: req.query.topic,
-
+            createdAt: req.query.createdAt,
         });
     } catch (e) {
         res.status(401).json({

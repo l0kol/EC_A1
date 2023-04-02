@@ -8,6 +8,8 @@ import { TiShoppingCart } from 'react-icons/ti';
 import { RiQuestionAnswerLine } from 'react-icons/ri';
 import { MdOutlineDevicesOther, MdConnectedTv } from "react-icons/md";
 import { RxPerson } from 'react-icons/rx';
+import {BsGear} from 'react-icons/bs'
+import {BiLogOut} from 'react-icons/bi'
 
 import { useNavigate } from 'react-router-dom';
 
@@ -50,8 +52,8 @@ const PanelProfile = () => {
                             <Button href="/room" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><MdConnectedTv /></Button>
                             <p style={{marginBottom:"3px"}}>Soba</p>
                         </Col>
-                        <Col style={{alignItems:"center"}}>
-                            <Button href="/profile" style={{fontSize:"70px", backgroundColor:"#22242E", border:"none", margin:"35px", padding:"5px 20px", borderRadius:"15%"}}><RxPerson /></Button>
+                        <Col style={{alignItems:"center", marginTop: "30px"}}>
+                        <img src="zrno_framed.png" alt="slika uporabnika" style={{width: "120px"}}/>
                         </Col>
                         <Col style={{marginTop:"10px"}}>
                             <Button href="/store" style={{fontSize:"35px", backgroundColor:"#C0322A", border:"none", borderRadius:"15%", padding:"5px 15px"}}><TiShoppingCart /></Button>
@@ -60,9 +62,11 @@ const PanelProfile = () => {
                             <p style={{marginBottom:"3px"}}>Naprave</p>
                         </Col>
                     </Row>
-                    <hr style={{background: "#C0322A", height: "5px", border: "none", radius:"3%", margin:"5px 30px"}}/>
+                    <Button variant="dark" style={{marginBottom: "0px"}}><h3 style={{padding: "0px 5px", marginTop: "3px"}}>{context.user.name}</h3></Button>
+                    <hr style={{background: "#C0322A", height: "5px", border: "none", radius:"3%", margin:"5px 30px", borderRadius: "8px"}}/>
                     <Button href="/" style={{position: "absolute", bottom: "10px", left: "10px", width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "#6CB4EE", border: "none", textDecoration:"none", fontSize:"14px", boxShadow:"1px 1px 3px 3px #22242E"}}><p style={{position:"absolute", bottom:"-1px", left:"6px"}}>DOMOV</p></Button>
                     {/* navigacija */}
+                    
 
             <Row>
                 <Col style={{marginTop:"20px"}}>
@@ -74,15 +78,15 @@ const PanelProfile = () => {
                 </Col>
             </Row>
 
-            <Row style={{marginTop:"50px"}}></Row>
+            <Row style={{marginTop:"10px"}}></Row>
 
-            <hr style={{background: "#C0322A", height: "5px", border: "none"}}/>
+            <hr style={{background: "#C0322A", height: "5px", border: "none", borderRadius: "8px"}}/>
 
             <Row style={{marginLeft:"20px", fontSize:"25px"}}>
                 Zrna: {context.user.coins}<img src="zrnocoin.png" alt="zrno" style={{width: "60px", height: "35px"}}/>
             </Row>
 
-            <hr style={{background: "#C0322A", height: "5px", border: "none"}}/>
+            <hr style={{background: "#C0322A", height: "5px", border: "none", borderRadius: "8px"}}/>
 
             <Row style={{marginLeft:"20px", fontSize:"25px"}}>
                 Kolegi:
@@ -95,7 +99,7 @@ const PanelProfile = () => {
                 <Col><img src="zrno2.png" alt="slika uporabnika" style={{width: "50px"}}/></Col>
             </Row>
             
-            <hr style={{background: "#C0322A", height: "5px", border: "none"}}/>
+            <hr style={{background: "#C0322A", height: "5px", border: "none", borderRadius: "8px"}}/>
             
             <Row style={{marginLeft:"20px", fontSize:"25px"}}>
                 Kolajne:
@@ -104,11 +108,11 @@ const PanelProfile = () => {
             </Row>
             <Row>
                 <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}}><RiQuestionAnswerLine /></Button>
+                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}}><BsGear /></Button>
                     <p>Nastavitve</p>
                 </Col>
                 <Col style={{marginTop:"20px"}}>
-                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}} onClick={navigateLogout}><RiQuestionAnswerLine /></Button>
+                    <Button variant="danger" href="/forum" style={{fontSize:"30px"}} onClick={navigateLogout}><BiLogOut /></Button>
                     <p>Odjava</p>
                 </Col>
             </Row>

@@ -11,7 +11,7 @@ import { MdPhoneIphone, MdTv, MdVideogameAsset, MdConnectedTv, MdOutlineDevicesO
 import { GoPackage } from "react-icons/go";
 
 import NewPostModal from "./mixed/NewPostModal";
-// import WheelOfFortuneModal from "./mixed/WheelOfFortune";
+import WheelOfFortuneModal from "./mixed/WheelOfFortune";
 
 
 
@@ -52,7 +52,7 @@ const PanelStore = () => {
             <Row style={{marginTop:"15px", marginBottom:"5px"}}>
                 <div style={{width:"45%"}}>
                     <Button variant="warning" href="/ugodnosti" style={{fontSize:"30px"}}>>Ugodnosti!</Button>
-                    <p style={{fontSize:"18px"}}>Stanje: 1000 <img src="zrnocoin.png" alt="zrno" style={{width: "20px"}}/></p>
+                    <p style={{fontSize:"18px"}}>Stanje: {context.user.coins} <img src="zrnocoin.png" alt="zrno" style={{width: "20px"}}/></p>
                 </div>
 
                 <div style={{width:"20%"}}></div>
@@ -92,7 +92,7 @@ const PanelStore = () => {
             </Row>
 
         
-        <NewPostModal />
+        <WheelOfFortuneModal />
 
         </Container>
     )

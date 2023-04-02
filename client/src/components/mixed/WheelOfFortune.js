@@ -1,39 +1,13 @@
 import React, {useState, useEffect, useContext, useCallback} from 'react';
 import {AppContext} from "../../Context/context";
-import {InputGroup, Button, Form} from "react-bootstrap";
-import WheelOfFortune from "react-native-wheel-of-fortune";
+import {InputGroup, Button, Row, Col} from "react-bootstrap";
 import {motion} from 'framer-motion'
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
 const WheelOfFortuneModal = () => {
     const context = useContext(AppContext);
-    const participants = [
-        '%10',
-        '%20',
-        '%30',
-        '%40',
-        '%50',
-        '%60',
-        '%70',
-        '%90',
-        'FREE',
-      ];
-      const wheelOptions = {
-            rewards: participants,
-            knobSize: 50,
-            borderWidth: 5,
-            borderColor: '#000',
-            innerRadius: 50,
-            duration: 4000,
-            backgroundColor: 'transparent',
-            textAngle: 'horizontal',
-            // knobSource: require('./assets/images/knoob.png'),
-            getWinner: (value, index) => {
-              this.setState({winnerValue: value, winnerIndex: index});
-            },
-            onRef: ref => (this.child = ref),
-          };
+   
       
 
     const confirm = async (title, body) => {
@@ -74,12 +48,23 @@ const WheelOfFortuneModal = () => {
             <div className='modal-confirm-container' style={{backgroundColor: "white"}}>
             <h3 > Zavrtiii monaaa </h3> 
 
-            <WheelOfFortune
-            wheelOptions={wheelOptions}
-            />
-            <Button title="Press me" onPress={ () => { this.child._onPress() } } />
+            <img src="wheel_of_fortune.gif" alt="wheel" style={{width: "300px"}}/>
 
-                
+            
+            <Row>
+            <Col>
+            <Button variant="btn btn-success active" type='submit' style={{backgroundColor: "green", margin: "1rem"}}>Povleci</Button>
+            
+            </Col>
+            <Col>
+            <Button variant="btn btn-danger" style={{backgroundColor: "red", margin: "1rem"}} onClick={() => {
+                context.SetCreatePostModal({open: false})
+            }}>
+            Prekliči
+            </Button>
+            </Col>
+            </Row>
+ 
             <div className='modal-confirm-container-input'> 
             
                       
