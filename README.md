@@ -163,9 +163,9 @@ Topic = ({
 		type: String
 	},
 })
-	</code>
+</code>
 --------------------------------------------------------------------------------------------------------------------
-	<code>
+<code>
 Post = ({
 	title: {
 		required: true,
@@ -189,8 +189,8 @@ Post = ({
 	}
 
 })
-	</code>
-	<code>
+</code>
+<code>
 Reply = ({
 	postId: {
 		required: true,
@@ -217,9 +217,9 @@ Reply = ({
 		type: Number
 	}
 })
-	</code>
+</code>
 --------------------------------------------------------------------------------------------------------------------
-	<code>
+<code>
 Product = ({
 	//array of elements
 	name: {
@@ -239,8 +239,8 @@ Product = ({
 		type: Number
 	},
 })
-	</code>
-	<code>
+</code>
+<code>
 Wheel = ({
 	//array of elements
 	elements: {
@@ -252,9 +252,9 @@ Wheel = ({
 		type: Date
 	},
 })
-	</code>
+</code>
 --------------------------------------------------------------------------------------------------------------------
-	<code>
+<code>
 Element = ({
 	//array of elements
 	name: {
