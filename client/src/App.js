@@ -36,9 +36,6 @@ function App() {
         }).catch(e => console.log(e))
 
 
-        
-
-
     //Load user data
     const user = context.apiUserFetch()
         .then(data => {
